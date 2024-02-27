@@ -326,6 +326,9 @@ class FullMapState extends State<FullMap> {
     final nextName =
         _stylesAndLoaders[(selectedStyleId + 1) % _stylesAndLoaders.length]
             .name;
+
+    final textScale = TextScaler.linear(1.4);
+
     return new Scaffold(
         floatingActionButton: Padding(
           padding: const EdgeInsets.all(32.0),
@@ -356,7 +359,7 @@ class FullMapState extends State<FullMap> {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     "Current source ${styleInfo.name}",
-                    textScaleFactor: 1.4,
+                    textScaler: textScale,
                   ),
                 ),
               ),
